@@ -1,0 +1,139 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.edumap.MainActivity" >
+    
+	<com.example.edumap.LocationLayout
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        ></com.example.edumap.LocationLayout>
+    
+    <com.example.edumap.SiftAndSearchLayout
+        android:id="@+id/sift_and_search"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_below="@id/location"
+    	android:layout_marginLeft="4dp"
+    	android:layout_marginRight="4dp"
+        ></com.example.edumap.SiftAndSearchLayout>
+    
+    
+    <include layout="@layout/bottom_bar" 
+        android:id="@+id/main_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        />
+    
+    
+    <ImageView 
+        android:id="@+id/image_beijing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/sift_and_search"
+        android:layout_above="@id/main_bottom_bar"
+        android:scaleType="fitStart"
+        android:src="@drawable/beijing"
+        />
+    
+    
+    <ImageView 
+        android:id="@+id/image_my"
+        android:layout_width="60dp"
+    	android:layout_height="60dp"
+		android:layout_above="@id/main_bottom_bar"
+    	android:layout_alignParentLeft="true"
+    	android:layout_marginLeft="4dp"
+        android:src="@drawable/roundbutton"
+        />
+    
+    
+    <ImageView 
+        android:id="@+id/alternative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/sift_and_search"
+        android:layout_above="@id/main_bottom_bar"
+        android:scaleType="fitStart"
+        android:src="@drawable/changping"
+        android:visibility="gone"
+        />
+    
+    
+    <Button
+        android:id="@+id/xicheng"
+        android:layout_width="82dp"
+    	android:layout_height="32dp"
+    	android:background="@drawable/greenbutton"
+		android:layout_above="@id/main_bottom_bar"
+    	android:layout_alignParentRight="true"
+    	android:layout_marginRight="4dp"
+    	android:text="西城区"
+    	android:textSize="15dp"
+    	/>
+    
+    <Button
+        android:id="@+id/shijingshan"
+        android:layout_width="82dp"
+    	android:layout_height="32dp"
+    	android:background="@drawable/greenbutton"
+		android:layout_above="@id/xicheng"
+    	android:layout_alignParentRight="true"
+    	android:layout_marginRight="4dp"
+    	android:text="石景山区"
+    	android:textSize="15dp"
+    	/>
+    
+    <Button
+        android:id="@+id/haidian"
+        android:layout_width="82dp"
+    	android:layout_height="32dp"
+    	android:background="@drawable/greenbutton"
+		android:layout_above="@id/shijingshan"
+    	android:layout_alignParentRight="true"
+    	android:layout_marginRight="4dp"
+    	android:text="海淀区"
+    	android:textSize="15dp"
+    	/>
+    
+    <Button
+        android:id="@+id/fengtai"
+        android:layout_width="82dp"
+    	android:layout_height="32dp"
+    	android:background="@drawable/greenbutton"
+		android:layout_above="@id/haidian"
+    	android:layout_alignParentRight="true"
+    	android:layout_marginRight="4dp"
+    	android:text="丰台区"
+    	android:textSize="15dp"
+    	/>
+    
+    <Button
+        android:id="@+id/dongcheng"
+        android:layout_width="82dp"
+    	android:layout_height="32dp"
+    	android:background="@drawable/greenbutton"
+		android:layout_above="@id/fengtai"
+    	android:layout_alignParentRight="true"
+    	android:layout_marginRight="4dp"
+    	android:text="东城区"
+    	android:textSize="15dp"
+    	/>
+    
+    <Button
+        android:id="@+id/chaoyang"
+        android:layout_width="82dp"
+    	android:layout_height="32dp"
+    	android:background="@drawable/greenbutton"
+		android:layout_above="@id/dongcheng"
+    	android:layout_alignParentRight="true"
+    	android:layout_marginRight="4dp"
+    	android:text="朝阳区"
+    	android:textSize="15dp"
+    	/>
+    
+    
+</RelativeLayout>
