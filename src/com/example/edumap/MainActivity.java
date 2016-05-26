@@ -1,11 +1,12 @@
 package com.example.edumap;
 
 
+import bin.classes.com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,7 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends Activity {
 
     private static int result;
     private static int x;
@@ -37,13 +38,26 @@ public class MainActivity extends FragmentActivity {
     private static Bitmap[] district;
     private static TextView[] mBottoms;
     private static String[] stringDistricts;
+    private static SlidingMenu menu;
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
-		
+		ActivityCollector.addActivity(this);
+//
+//        menu = new SlidingMenu(this);
+//        menu.setMode(SlidingMenu.LEFT);
+//        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+//        menu.setShadowWidthRes(R.dimen.shadow_width);
+//        menu.setShadowDrawable(R.drawable.shadow);
+//        menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+//        menu.setFadeDegree(0.35f);
+//        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+//        menu.setMenu(R.layout.location);
+		ImageView re = (ImageView)findViewById(R.id.img_return);
+		re.setVisibility(View.INVISIBLE);
 		bottomResult = -1;
 		mBottoms = new TextView[4];
 		mBottoms[0] = (TextView)findViewById(R.id.tv_tab_bottom_01);
@@ -123,12 +137,13 @@ public class MainActivity extends FragmentActivity {
 			bottomResult = temp;
 			mBottoms[bottomResult].setTextColor(getResources().getColor(R.color.blue));
 			
-			Intent it = new Intent(MainActivity.this, Tab.class);
-			Bundle bundle=new Bundle();
-			bundle.putInt("bottom", bottomResult);
-			it.putExtras(bundle); 
-			startActivity(it);
-			
+//			Intent it = new Intent(MainActivity.this, Tab.class);
+//			Bundle bundle=new Bundle();
+//			bundle.putInt("bottom", bottomResult);
+//			it.putExtras(bundle); 
+//			startActivity(it);
+//			
+
         }  
     }; 
 	
@@ -208,5 +223,11 @@ public class MainActivity extends FragmentActivity {
         }        
     };  
 	
+    @Override
+    protected void onDestroy() {
+    	super.onDestroy();
+    	ActivityCollector.removeActivity(this);
+    }
+    
 	
 }
